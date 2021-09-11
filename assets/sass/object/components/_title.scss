@@ -1,0 +1,17 @@
+@use '../../foundation' as f;
+.c-title01 {
+  text-align: center;
+  font-size: f.smooth_font(20px, 30px);
+  margin-bottom: f.smooth_size(20px, 30px);
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: f.smooth_size(30px, 50px);
+    height: 2px;
+    background: #000;
+  }
+}

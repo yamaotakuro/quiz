@@ -1,0 +1,25 @@
+{
+  "type":"array",
+  "id":"world30",
+  "title":"ワールドカップの30",
+  "problem":"W杯で優勝した数が多い国を順番に並べなさい",
+  "body":[
+    {
+      "name":"ウルグアイ",
+      "url":"/uruguay.jpg"
+    },
+    {
+      "name":"イタリア",
+      "url":"/italy.jpg"
+    },
+    {
+      "name":"スペイン",
+      "url":"/spain.jpg"
+    },
+    {
+      "name":"ブラジル",
+      "url":"/brazil.jpg"
+    }
+  ],
+  "answer":["ブラジル","イタリア","ウルグアイ","スペイン"]
+}

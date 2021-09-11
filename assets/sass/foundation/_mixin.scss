@@ -1,0 +1,125 @@
+@use './variable'as v;
+
+@mixin media_retina() {
+  @media only screen and (max-width: 3840px) and (min-width: 320px) and (min-device-pixel-ratio: 1.5),
+    (-o-min-device-pixel-ratio: 1.5),
+    (-webkit-min-device-pixel-ratio: 1.5),
+    (min-device-pixel-ratio: 1.5) {
+    @content;
+  }
+}
+
+@mixin fz_vw($font_size: 10, $viewport: 1140) {
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size, $viewport);
+}
+
+@mixin font_size($min, $max) {
+  font-size: str-slice(#{($max/10)}, 1, str-index(#{($max/10)}, px)-1) + (rem);
+
+  @media only screen and (max-width: 1599px) {
+    font-size: smooth_font($min, $max);
+  }
+
+  @media only screen and (max-width: 374px) {
+    font-size: str-slice(#{($min/10)}, 1, str-index(#{($min/10)}, px)-1) + (rem);
+  }
+}
+
+//中央配置
+
+@mixin centering($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if $horizontal and $vertical {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $horizontal {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if $vertical {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+@mixin mq-max {
+  @media only screen and (min-width: v.$screen-max) {
+    @content;
+  }
+}
+
+@mixin mq-md {
+  @media only screen and (min-width: v.$screen-md) {
+    @content;
+  }
+}
+
+@mixin mq-tab {
+  @media only screen and (min-width: v.$screen-tab) {
+    @content;
+  }
+}
+
+@mixin mq-sp {
+  @media only screen and (min-width: v.$screen-sp) {
+    @content;
+  }
+}
+
+@mixin mq-spmin {
+  @media only screen and (min-width: v.$screen-spmin) {
+    @content;
+  }
+}
+
+@mixin mq-min {
+  @media only screen and (min-width: v.$screen-min) {
+    @content;
+  }
+}
+
+@mixin mq-landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin mq-portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin bg-set($size: cover) {
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin absolute-set {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin browser-ie {
+  @media all and (-ms-high-contrast: none) {
+    @content;
+  }
+}

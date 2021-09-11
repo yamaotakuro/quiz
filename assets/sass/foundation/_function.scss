@@ -1,0 +1,71 @@
+@use './variable'as v;
+
+@function smooth_font(
+  $min-font,
+  $max-font,
+  $media-min: v.$unionnet-min,
+  $media-max: v.$unionnet-max
+) {
+  $times: (((($max-font)- ($min-font)) * 100)/ (($media-max)- ($media-min)));
+  $plus: ($max-font)- (($media-max/100) * $times);
+  @return calc(
+    #{$times}vw + #{str-slice(#{($plus/10)}, 1, str-index(#{($plus/10)}, px)-1)+
+      (rem)}
+  );
+}
+
+@function smooth_size(
+  $min-size,
+  $max-size,
+  $media-min: v.$unionnet-min,
+  $media-max: v.$unionnet-max
+) {
+  $times: (((($max-size)- ($min-size)) * 100)/ (($media-max)- ($media-min)));
+  $plus: ($max-size)- (($media-max/100) * $times);
+  @return calc(
+    #{$times}vw + #{str-slice(#{($plus)}, 1, str-index(#{($plus)}, px)-1)+ (px)}
+  );
+}
+
+/*
+smooth_font(最小サイズpx、最大サイズpx、最小画面サイズpx、最大画面サイズpx）
+smooth_size(最小サイズpx、最大サイズpx、最小画面サイズpx、最大画面サイズpx）
+
+指定した「最小画面サイズ」から「最大画面サイズ」へむけて、変化します。
+
+「smooth_font」と「smooth_size」の違いは、
+「smooth_font」は「rem」
+「smooth_size」は「px」
+になるだけです。
+
+※注
+・デフォルトでは第3引数と第4引数がなくても横幅375pxから横幅1600pxの割合で変化します。
+・「最大画面サイズ」より画面サイズが大きかったり、「最小画面サイズ」より画面サイズが小さい場合は
+比率を維持したまま、大きくなったり小さくなったりします。
+必要があれば、media queryなどで上限や下限を指定してください。
+
+例）-----------------------------
+
+body {
+  font-size: 1.8rem;
+  @media only screen and (max-width: 1599px) {
+    font-size: smooth_font(14px, 18px);
+  }
+  @media only screen and (max-width: 374px) {
+    font-size: 1.4rem;
+  }
+}
+
+.c-container {
+  margin: 0 auto;
+  max-width: 1110px;
+  width: smooth_size(335px, 1110px);
+  
+  @media only screen and (max-width: 374px) {
+    // 横幅320pxの時など
+    width: 280px;
+  }
+}
+
+--------------------------------
+*/

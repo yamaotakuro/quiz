@@ -1,0 +1,25 @@
+{
+  "type":"array",
+  "id":"japan30",
+  "title":"日本代表の30",
+  "problem":"日本代表の歴代監督を順番に並べなさい",
+  "body":[
+    {
+      "name":"ジーコ",
+      "url":"/thumb01.jpg"
+    },
+    {
+      "name":"アギーレ",
+      "url":"/thumb02.jpg"
+    },
+    {
+      "name":"トルシエ",
+      "url":"/thumb03.jpg"
+    },
+    {
+      "name":"オシム",
+      "url":"/thumb04.jpg"
+    }
+  ],
+  "answer":["トルシエ","ジーコ","オシム","アギーレ"]
+}

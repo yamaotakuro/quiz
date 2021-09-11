@@ -1,0 +1,19 @@
+@use '../../foundation' as f;
+.c-button01 {
+  &.-black {
+    a,
+    button {
+      background: f.$font_color;
+      color: #fff;
+    }
+  }
+  a,
+  button {
+    display: inline-block;
+    background: #fff;
+    color: f.$font_color;
+    border-radius: 5px;
+    font-size: f.smooth_font(15px, 20px);
+    padding: 0 f.smooth_size(11px, 30px);
+  }
+}

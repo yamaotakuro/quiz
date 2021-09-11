@@ -1,0 +1,104 @@
+@use '../../foundation'as f;
+
+.c-container {
+  //width: f.$base_width_max + f.$base_padding_max * 2;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: f.smooth_size(f.$base_padding_min, f.$base_padding_max);
+  padding-right: f.smooth_size(f.$base_padding_min, f.$base_padding_max);
+  width: f.smooth_size(f.$base_width_min, f.$base_width_max + f.$base_padding_max * 2);
+}
+
+.c-fluid {
+  padding-left: f.smooth_size(f.$base_padding_min, f.$base_padding_max);
+  padding-right: f.smooth_size(f.$base_padding_min, f.$base_padding_max);
+}
+
+.c-section {
+  &01 {
+    padding-top: f.smooth_size(90px, 160px);
+    padding-bottom: f.smooth_size(90px, 160px);
+  }
+  &02 {
+    padding-top: f.smooth_size(80px, 140px);
+    padding-bottom: f.smooth_size(80px, 140px);
+  }
+  &03 {
+    padding-top: f.smooth_size(70px, 120px);
+    padding-bottom: f.smooth_size(70px, 120px);
+  }
+  &04 {
+    padding-top: f.smooth_size(60px, 100px);
+    padding-bottom: f.smooth_size(60px, 100px);
+  }
+  &05 {
+    padding-top: f.smooth_size(50px, 80px);
+    padding-bottom: f.smooth_size(50px, 80px);
+  }
+  &06 {
+    padding-top: f.smooth_size(40px, 60px);
+    padding-bottom: f.smooth_size(40px, 60px);
+  }
+  &07 {
+    padding-top: f.smooth_size(25px, 40px);
+    padding-bottom: f.smooth_size(25px, 40px);
+  }
+  &08 {
+    padding-top: f.smooth_size(15px, 20px);
+    padding-bottom: f.smooth_size(15px, 20px);
+  }
+}
+
+.c-mt {
+  &01 {
+    margin-top: f.smooth_size(90px, 160px);
+  }
+  &02 {
+    margin-top: f.smooth_size(80px, 140px);
+  }
+  &03 {
+    margin-top: f.smooth_size(70px, 120px);
+  }
+  &04 {
+    margin-top: f.smooth_size(60px, 100px);
+  }
+  &05 {
+    margin-top: f.smooth_size(50px, 80px);
+  }
+  &06 {
+    margin-top: f.smooth_size(40px, 60px);
+  }
+  &07 {
+    margin-top: f.smooth_size(25px, 40px);
+  }
+  &08 {
+    margin-top: f.smooth_size(15px, 20px);
+  }
+}
+
+.c-mb {
+  &01 {
+    margin-bottom: f.smooth_size(90px, 160px);
+  }
+  &02 {
+    margin-bottom: f.smooth_size(80px, 140px);
+  }
+  &03 {
+    margin-bottom: f.smooth_size(70px, 120px);
+  }
+  &04 {
+    margin-bottom: f.smooth_size(60px, 100px);
+  }
+  &05 {
+    margin-bottom: f.smooth_size(50px, 80px);
+  }
+  &06 {
+    margin-bottom: f.smooth_size(40px, 60px);
+  }
+  &07 {
+    margin-bottom: f.smooth_size(25px, 40px);
+  }
+  &08 {
+    margin-bottom: f.smooth_size(15px, 20px);
+  }
+}
